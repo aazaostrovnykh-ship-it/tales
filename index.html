@@ -95,9 +95,11 @@
 
         .contact-info {
             display: flex;
-            gap: 30px;
+            flex-direction: column; /* Контакты в шапке выстроены в колонку */
+            gap: 5px;
             font-size: 0.95rem;
             font-weight: 600;
+            text-align: right;
         }
 
         .contact-info a {
@@ -415,7 +417,7 @@
         }
 
         .card h3 {
-            font-size: 1.8rem;
+            font-size: 1.6rem; /* Чуть уменьшили, чтобы длинные названия влезали */
             margin-bottom: 8px;
         }
 
@@ -560,6 +562,10 @@
             .header-content {
                 flex-direction: column;
                 gap: 15px;
+            }
+
+            .contact-info {
+                text-align: center;
             }
             
             .features {
@@ -738,14 +744,14 @@
                     </a>
                 </div>
 
-                <!-- А5 -->
+                <!-- Книга 14,5х21 см -->
                 <div class="card">
-                    <h3>Книга А5</h3>
+                    <h3>Книга 14,5×21 см</h3>
                     <p class="format">Компактный твердый переплет</p>
                     <div class="price">4 500 ₽</div>
                     <ul>
                         <li>Твердый переплет</li>
-                        <li>Удобный формат А5</li>
+                        <li>Формат 14,5×21 см</li>
                         <li>Плотная мелованная бумага</li>
                         <li>Долговечное издание</li>
                     </ul>
@@ -755,15 +761,15 @@
                     </a>
                 </div>
 
-                <!-- А4 Премиум -->
+                <!-- Книга 17х24 см (Премиум) -->
                 <div class="card premium">
                     <div class="card-badge">Лучший выбор</div>
-                    <h3>Книга А4</h3>
+                    <h3>Книга 17×24 см</h3>
                     <p class="format">Большой подарочный формат</p>
                     <div class="price">6 000 ₽</div>
                     <ul>
                         <li>Твердый переплет</li>
-                        <li>Большой формат А4</li>
+                        <li>Формат 17×24 см</li>
                         <li>Крупные детализированные иллюстрации</li>
                         <li>Плотная бумага премиум-класса</li>
                         <li>Идеальный подарок на память</li>
