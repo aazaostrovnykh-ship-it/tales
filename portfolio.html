@@ -91,6 +91,7 @@
             overflow: hidden;
             position: relative;
             transition: all 0.4s ease;
+            cursor: zoom-in; /* Курсор в виде лупы */
         }
 
         .gallery-item:hover {
@@ -104,8 +105,44 @@
             height: 100%;
             object-fit: cover;
             display: block;
-            aspect-ratio: 4 / 3; /* Чтобы картинки были аккуратными плитками */
+            aspect-ratio: 4 / 3; 
             transition: transform 0.5s ease;
+        }
+
+        /* --- СТИЛИ ДЛЯ ПОЛНОЭКРАННОГО ПРОСМОТРА (Lightbox) --- */
+        .lightbox {
+            display: none; /* Скрыто по умолчанию */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(15, 15, 15, 0.9); /* Темный фон с прозрачностью */
+            z-index: 9999;
+            justify-content: center;
+            align-items: center;
+            cursor: zoom-out; /* Курсор для закрытия */
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .lightbox.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .lightbox img {
+            max-width: 95%;
+            max-height: 95%;
+            object-fit: contain;
+            border-radius: 8px;
+            box-shadow: 0 0 50px rgba(0,0,0,0.5);
+            transform: scale(0.95);
+            transition: transform 0.3s ease;
+        }
+
+        .lightbox.active img {
+            transform: scale(1);
         }
 
         /* Подвал */
@@ -136,24 +173,33 @@
     <div class="container">
         <div class="page-title">
             <h1>Наши работы</h1>
-            <p>Примеры страниц из наших персональных книг</p>
+            <p>Нажмите на картинку, чтобы рассмотреть её подробнее</p>
         </div>
 
         <!-- Сетка галереи -->
         <div class="gallery">
+            
             <!-- Картинка 1 -->
-            <div class="gallery-item">
+            <!-- Обратите внимание на onclick="openLightbox('1.jpg')" -->
+            <div class="gallery-item" onclick="openLightbox('1.jpg')">
                 <img src="1.jpg" alt="Пример работы 1">
             </div>
             
-            <!-- Картинка 2 (Закомментирована, так как у вас пока нет 2.jpg) 
-            <div class="gallery-item">
+            <!-- КАК ДОБАВИТЬ НОВЫЕ КАРТИНКИ:
+                 Скопируйте эти 3 строчки, вставьте ниже и поменяйте 1.jpg на 2.jpg и т.д.
+                 
+            <div class="gallery-item" onclick="openLightbox('2.jpg')">
                 <img src="2.jpg" alt="Пример работы 2">
             </div>
+            
             -->
             
-            <!-- Чтобы добавить новые картинки, просто удалите эти скобки вокруг блока <div class="gallery-item">...</div> и загрузите файл 2.jpg, 3.jpg и т.д. в репозиторий -->
         </div>
+    </div>
+
+    <!-- Окно для полноэкранного просмотра -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+        <img src="" id="lightbox-img" alt="Просмотр фото">
     </div>
 
     <!-- Подвал -->
@@ -162,6 +208,25 @@
             <p>&copy; Персональные книги-сказки. Все права защищены.</p>
         </div>
     </footer>
+
+    <!-- Скрипт для работы увеличения картинок -->
+    <script>
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+
+        // Функция открытия
+        function openLightbox(imageSrc) {
+            lightboxImg.src = imageSrc; // Подставляем нужную картинку
+            lightbox.classList.add('active'); // Показываем окно
+            document.body.style.overflow = 'hidden'; // Отключаем прокрутку сайта сзади
+        }
+
+        // Функция закрытия
+        function closeLightbox() {
+            lightbox.classList.remove('active'); // Скрываем окно
+            document.body.style.overflow = 'auto'; // Включаем прокрутку обратно
+        }
+    </script>
 
 </body>
 </html>
