@@ -155,6 +155,13 @@
             max-width: 90%;
         }
 
+        /* Контейнер для кнопок в главном экране */
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
         .hero-image {
             flex: 1.1;
             position: relative;
@@ -215,6 +222,24 @@
                         0 0 50px rgba(243, 213, 134, 0.8);
             transform: scale(0.96);
             filter: brightness(1.05);
+        }
+
+        /* Стиль для второй кнопки (Портфолио) */
+        .btn-outline {
+            background: transparent;
+            color: var(--text-main);
+            border: 2px solid var(--gold-main);
+            box-shadow: none;
+        }
+
+        .btn-outline:hover {
+            background: rgba(212, 175, 55, 0.1);
+            color: var(--gold-dark);
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.2);
+        }
+        
+        .btn-outline:active {
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.5);
         }
 
         /* --- БЛОК ПРЕИМУЩЕСТВ --- */
@@ -548,6 +573,10 @@
                 margin: 0 auto 30px auto;
             }
             
+            .hero-buttons {
+                justify-content: center;
+            }
+            
             .features-text {
                 text-align: left;
             }
@@ -598,6 +627,13 @@
                 text-align: center;
                 justify-content: center;
             }
+            .hero-buttons {
+                flex-direction: column;
+                width: 100%;
+            }
+            .hero-buttons .btn {
+                width: 100%;
+            }
         }
     </style>
 </head>
@@ -626,7 +662,12 @@
                 <h1>Книга, в которой главный герой — Ваш ребенок</h1>
                 
                 <p>Погрузите малыша в захватывающий квест с любимыми героями. Поучительная история, красочные иллюстрации и ощущение настоящего чуда, созданное специально для него.</p>
-                <a href="#order" class="btn">Выбрать издание</a>
+                
+                <!-- Кнопки -->
+                <div class="hero-buttons">
+                    <a href="#order" class="btn">Выбрать издание</a>
+                    <a href="portfolio.html" class="btn btn-outline">Смотреть портфолио</a>
+                </div>
             </div>
             <div class="hero-image">
                 <img src="cover.jpg" alt="Обложка персональной книги">
