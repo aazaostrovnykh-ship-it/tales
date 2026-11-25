@@ -3,11 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Персональная книга-сказка | Теплый премиум</title>
+    <title>Наши работы | Портфолио</title>
 
-    <!-- Подтверждение прав Яндекс.Вебмастер -->
-    <meta name="yandex-verification" content="b28368fd177c5737" />
-    
     <!-- Yandex.Metrika counter -->
     <script type="text/javascript">
         (function(m,e,t,r,i,k,a){
@@ -28,7 +25,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
     
     <style>
-        /* --- БАЗОВЫЕ НАСТРОЙКИ (Теплая палитра) --- */
         :root {
             --bg-main: #FCFAF6;        
             --text-main: #2D2A26;      
@@ -36,604 +32,137 @@
             --gold-main: #D4AF37;      
             --gold-light: #F3D586;     
             --gold-dark: #B88A1E;      
-            --card-bg: #FFFFFF;
             --border-soft: #EBE3D5;
             --brown-dark: #4A2F1D; 
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
         body {
             font-family: 'Montserrat', sans-serif;
             background-color: var(--bg-main);
             color: var(--text-main);
             line-height: 1.8;
-            -webkit-font-smoothing: antialiased;
             background-image: radial-gradient(circle at 50% 0%, #FFFDF8 0%, var(--bg-main) 100%);
+            min-height: 100vh;
         }
 
-        h1, h2, h3 {
-            font-family: 'Playfair Display', serif;
-            color: var(--text-main);
-            line-height: 1.2;
-        }
+        h1, h2, h3 { font-family: 'Playfair Display', serif; line-height: 1.2; }
+        .container { max-width: 1140px; margin: 0 auto; padding: 0 30px; }
 
-        .container {
-            max-width: 1140px;
-            margin: 0 auto;
-            padding: 0 30px;
-        }
-
-        /* --- ШАПКА --- */
+        /* Шапка */
         header {
             padding: 25px 0;
             background-color: rgba(252, 250, 246, 0.9);
             backdrop-filter: blur(10px);
-            position: sticky;
-            top: 0;
-            z-index: 100;
             border-bottom: 1px solid var(--border-soft);
+            margin-bottom: 60px;
         }
-
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .header-story {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-family: 'Playfair Display', serif;
-            font-style: italic;
-            font-size: 1.15rem;
-            font-weight: 600;
-            color: var(--gold-dark);
-        }
-
-        .contact-info {
-            display: flex;
-            gap: 30px;
-            font-size: 0.95rem;
-            font-weight: 600;
-        }
-
-        .contact-info a {
-            color: var(--text-main);
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .contact-info a:hover {
-            color: var(--gold-dark);
-        }
-
-        /* --- ГЛАВНЫЙ ЭКРАН --- */
-        .hero {
-            padding: 80px 0 120px;
-        }
-
-        .hero-content {
-            display: flex;
-            align-items: center;
-            gap: 70px;
-        }
-
-        .hero-text {
-            flex: 1;
-        }
-
-        .hero-tagline {
-            display: inline-block;
-            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(243, 213, 134, 0.2));
-            color: var(--gold-dark);
-            padding: 10px 24px;
-            border-radius: 30px;
-            font-weight: 600;
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            margin-bottom: 25px;
-            border: 1px solid rgba(212, 175, 55, 0.3);
-        }
-
-        .hero-text h1 {
-            font-size: 3.4rem; 
-            margin-bottom: 25px;
-            color: var(--brown-dark); 
-        }
-
-        .hero-text p {
-            font-size: 1.1rem;
-            color: var(--text-muted);
-            margin-bottom: 45px;
-            max-width: 90%;
-        }
-
-        /* Контейнер для кнопок в главном экране */
-        .hero-buttons {
-            display: flex;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-
-        .hero-image {
-            flex: 1.1;
-            position: relative;
-        }
-
-        .hero-image img {
-            width: 100%;
-            border-radius: 12px;
-            box-shadow: 0 25px 50px -12px rgba(45, 42, 38, 0.15);
-            position: relative;
-            z-index: 2;
-            border: 5px solid #FFFFFF;
-        }
-
-        .hero-image::before {
-            content: '';
-            position: absolute;
-            top: -20px;
-            right: -20px;
-            bottom: 20px;
-            left: 20px;
-            border: 2px solid var(--gold-main);
-            border-radius: 12px;
-            z-index: 1;
-            opacity: 0.3;
-        }
-
-        /* --- КНОПКИ --- */
-        .btn {
+        
+        .header-content { display: flex; justify-content: space-between; align-items: center; }
+        
+        .btn-back {
             display: inline-flex;
             align-items: center;
-            justify-content: center;
-            gap: 10px;
-            background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold-main) 100%);
-            color: #FFFFFF;
-            padding: 18px 45px;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.95rem;
-            font-weight: 600;
+            gap: 8px;
+            color: var(--text-main);
             text-decoration: none;
-            border-radius: 50px;
-            border: none;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 10px 25px -5px rgba(212, 175, 55, 0.4);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .btn:hover {
-            background: linear-gradient(135deg, var(--gold-main) 0%, var(--gold-dark) 100%);
-            transform: translateY(-3px);
-            box-shadow: 0 15px 30px -5px rgba(212, 175, 55, 0.5);
-        }
-
-        .btn:active {
-            box-shadow: 0 0 25px rgba(212, 175, 55, 1), 
-                        0 0 50px rgba(243, 213, 134, 0.8);
-            transform: scale(0.96);
-            filter: brightness(1.05);
-        }
-
-        /* Стиль для второй кнопки (Портфолио) */
-        .btn-outline {
-            background: transparent;
-            color: var(--text-main);
-            border: 2px solid var(--gold-main);
-            box-shadow: none;
-        }
-
-        .btn-outline:hover {
-            background: rgba(212, 175, 55, 0.1);
-            color: var(--gold-dark);
-            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.2);
-        }
-        
-        .btn-outline:active {
-            box-shadow: 0 0 15px rgba(212, 175, 55, 0.5);
-        }
-
-        /* --- БЛОК ПРЕИМУЩЕСТВ --- */
-        .features {
-            padding: 90px 0;
-            background-color: #FFFFFF;
-            border-radius: 30px;
-            margin: 0 20px;
-            box-shadow: 0 20px 40px -10px rgba(45, 42, 38, 0.05);
-            border: 1px solid var(--border-soft);
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 70px;
-            align-items: center;
-            padding: 0 40px;
-        }
-
-        .features-image img {
-            width: 100%;
-            border-radius: 12px;
-            box-shadow: 0 20px 40px -10px rgba(45, 42, 38, 0.1);
-            border: 4px solid #FFFFFF;
-        }
-
-        .section-title {
-            font-size: 3rem;
-            margin-bottom: 20px;
-            position: relative;
-        }
-        
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 60px;
-            height: 2px;
-            background: var(--gold-main);
-            margin-top: 20px;
-            opacity: 0.6;
-        }
-
-        .feature-list {
-            list-style: none;
-            margin-top: 40px;
-        }
-
-        .feature-list li {
-            margin-bottom: 25px;
-            font-size: 1rem;
-            display: flex;
-            align-items: flex-start;
-            gap: 20px;
-            color: var(--text-muted);
-        }
-
-        .feature-list li strong {
-            color: var(--text-main);
-            display: block;
-            margin-bottom: 5px;
-            font-size: 1.15rem;
-            font-family: 'Playfair Display', serif;
-            font-weight: 700;
-        }
-
-        .feature-icon {
-            color: var(--gold-main);
-            font-size: 1.5rem;
-            line-height: 1;
-            margin-top: 2px;
-        }
-
-        /* --- БЛОК: ПОВОДЫ ДЛЯ ПОДАРКА --- */
-        .occasions {
-            padding: 100px 0;
-        }
-
-        .occasions-header {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-
-        .occasions-header h2 {
-            font-size: 3rem;
-            margin-bottom: 15px;
-        }
-
-        .occasions-header p {
-            color: var(--text-muted);
-            font-size: 1.1rem;
-        }
-
-        .occasions-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-        }
-
-        .occasion-card {
-            background: #FFFFFF;
-            border: 1px solid var(--border-soft);
-            border-radius: 16px;
-            padding: 35px 30px;
-            text-align: center;
-            transition: all 0.3s ease;
-            box-shadow: 0 5px 20px -10px rgba(45, 42, 38, 0.05);
-        }
-
-        .occasion-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--gold-main);
-            box-shadow: 0 15px 30px -10px rgba(212, 175, 55, 0.15);
-        }
-
-        .occasion-icon {
-            font-size: 2rem;
-            margin-bottom: 15px;
-            display: inline-block;
-        }
-
-        .occasion-card h3 {
-            font-size: 1.3rem;
-            margin-bottom: 10px;
-            font-family: 'Montserrat', sans-serif;
             font-weight: 600;
+            font-size: 0.95rem;
+            transition: color 0.3s;
         }
+        
+        .btn-back:hover { color: var(--gold-dark); }
 
-        .occasion-card p {
-            font-size: 0.9rem;
-            color: var(--text-muted);
-        }
+        /* Заголовок */
+        .page-title { text-align: center; margin-bottom: 50px; }
+        .page-title h1 { font-size: 3.5rem; color: var(--brown-dark); margin-bottom: 15px; }
+        .page-title p { color: var(--text-muted); font-size: 1.1rem; }
 
-        /* --- БЛОК ТАРИФОВ --- */
-        .pricing {
-            padding: 110px 0;
-            background-color: #FFFFFF;
-            border-top: 1px solid var(--border-soft);
-        }
-
-        .pricing-header {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-
-        .pricing-header h2 {
-            font-size: 3rem;
-            margin-bottom: 15px;
-        }
-
-        .pricing-header p {
-            color: var(--text-muted);
-            font-size: 1.1rem;
-        }
-
-        .pricing-cards {
+        /* Сетка галереи */
+        .gallery {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 30px;
-            align-items: stretch;
+            margin-bottom: 80px;
         }
 
-        .card {
-            background: var(--bg-main);
-            border: 1px solid var(--border-soft);
-            border-radius: 20px;
-            padding: 45px 35px;
-            display: flex;
-            flex-direction: column;
+        .gallery-item {
+            background: #FFFFFF;
+            border: 4px solid #FFFFFF;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px -10px rgba(45, 42, 38, 0.15);
+            overflow: hidden;
             position: relative;
             transition: all 0.4s ease;
+            cursor: zoom-in; /* Курсор в виде лупы */
         }
 
-        .card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 40px -10px rgba(45, 42, 38, 0.1);
-            border-color: rgba(212, 175, 55, 0.4);
+        .gallery-item:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 20px 40px -10px rgba(212, 175, 55, 0.3);
+            border-color: var(--gold-main);
         }
 
-        .card.premium {
-            border: 2px solid var(--gold-main);
-            background: linear-gradient(180deg, #FFFFFF 0%, #FFFDF9 100%);
-            box-shadow: 0 15px 35px -10px rgba(212, 175, 55, 0.15);
-        }
-
-        .card-badge {
-            position: absolute;
-            top: -16px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold-main) 100%);
-            color: #FFFFFF;
-            padding: 8px 24px;
-            border-radius: 30px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            white-space: nowrap;
-            box-shadow: 0 4px 10px rgba(212, 175, 55, 0.3);
-        }
-
-        .card h3 {
-            font-size: 1.8rem;
-            margin-bottom: 8px;
-        }
-
-        .card p.format {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            margin-bottom: 25px;
-            border-bottom: 1px dashed var(--border-soft);
-            padding-bottom: 25px;
-        }
-
-        .card .price {
-            font-family: 'Playfair Display', serif;
-            font-size: 3.2rem;
-            font-weight: 700;
-            color: var(--text-main);
-            margin-bottom: 25px;
-            line-height: 1;
-        }
-
-        .card ul {
-            list-style: none;
-            margin-bottom: 40px;
-            flex-grow: 1;
-        }
-
-        .card ul li {
-            margin-bottom: 15px;
-            color: var(--text-muted);
-            position: relative;
-            padding-left: 25px;
-            font-size: 0.95rem;
-        }
-
-        .card ul li::before {
-            content: '✦';
-            color: var(--gold-main);
-            position: absolute;
-            left: 0;
-            font-size: 1rem;
-        }
-
-        .card .btn {
+        .gallery-item img {
             width: 100%;
-            padding: 16px 20px;
-            font-size: 0.9rem;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            aspect-ratio: 4 / 3; 
+            transition: transform 0.5s ease;
         }
 
-        /* --- ПОДВАЛ --- */
+        /* Окно полноэкранного просмотра (Lightbox) */
+        .lightbox {
+            display: none; 
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(15, 15, 15, 0.9); 
+            z-index: 9999;
+            justify-content: center;
+            align-items: center;
+            cursor: zoom-out; 
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .lightbox.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .lightbox img {
+            max-width: 95%;
+            max-height: 95%;
+            object-fit: contain;
+            border-radius: 8px;
+            box-shadow: 0 0 50px rgba(0,0,0,0.5);
+            transform: scale(0.95);
+            transition: transform 0.3s ease;
+        }
+
+        .lightbox.active img {
+            transform: scale(1);
+        }
+
+        /* Подвал */
         footer {
             background-color: var(--bg-main);
-            padding: 60px 0;
+            padding: 40px 0;
             text-align: center;
             border-top: 1px solid var(--border-soft);
         }
+        footer p { color: var(--text-muted); font-size: 0.95rem; }
 
-        .footer-story {
-            font-family: 'Playfair Display', serif;
-            font-style: italic;
-            font-size: 1.15rem;
-            color: var(--text-main);
-            max-width: 650px;
-            margin: 0 auto 35px auto;
-            line-height: 1.6;
-        }
-
-        /* Пульсирующее сердце — крупнее и краснее */
-        .pulse-heart {
-            display: inline-block;
-            color: #D00000;
-            font-size: 1.9em;
-            font-weight: 700;
-            margin-left: 8px;
-            vertical-align: middle;
-            animation: pulse 1.5s infinite;
-            transform-origin: center;
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.3); }
-            100% { transform: scale(1); }
-        }
-
-        footer p.subtitle {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            margin-bottom: 20px;
-        }
-
-        footer .footer-contacts {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            gap: 20px;
-        }
-
-        footer .footer-contacts a.phone-link {
-            color: var(--text-main);
-            text-decoration: none;
-            font-size: 1.3rem;
-            font-weight: 700;
-            transition: color 0.3s;
-            border-bottom: 1px solid transparent;
-        }
-
-        footer .footer-contacts a.phone-link:hover {
-            color: var(--gold-dark);
-            border-bottom: 1px solid var(--gold-dark);
-        }
-
-        /* --- АДАПТИВНОСТЬ --- */
-        @media (max-width: 992px) {
-            .hero-content, .features-grid {
-                flex-direction: column;
-                grid-template-columns: 1fr;
-                text-align: center;
-                gap: 50px;
-            }
-
-            .hero-text h1 {
-                font-size: 2.8rem; 
-            }
-
-            .hero-text p {
-                margin: 0 auto 30px auto;
-            }
-            
-            .hero-buttons {
-                justify-content: center;
-            }
-            
-            .features-text {
-                text-align: left;
-            }
-            
-            .section-title::after {
-                margin: 20px auto 0 auto;
-            }
-            
-            .hero-image::before {
-                display: none;
-            }
-
-            .header-content {
-                flex-direction: column;
-                gap: 15px;
-            }
-            
-            .features {
-                padding: 60px 20px;
-            }
-            
-            .features-grid {
-                padding: 0;
-            }
-        }
-
+        /* Адаптив для телефонов */
         @media (max-width: 576px) {
-            .hero-text h1 {
-                font-size: 2.2rem; 
-            }
-            .contact-info {
-                flex-direction: column;
-                gap: 10px;
-                align-items: center;
-            }
-            .hero {
-                padding: 50px 0 60px;
-            }
-            .pricing-header h2, .occasions-header h2 {
-                font-size: 2.4rem;
-            }
-            .footer-story {
-                font-size: 1rem;
-                padding: 0 15px;
-            }
-            .header-story {
-                font-size: 1rem;
-                text-align: center;
-                justify-content: center;
-            }
-            .hero-buttons {
-                flex-direction: column;
-                width: 100%;
-            }
-            .hero-buttons .btn {
-                width: 100%;
-            }
+            .page-title h1 { font-size: 2.5rem; }
+            .gallery { grid-template-columns: 1fr; gap: 20px; }
+            .header-content { flex-direction: column; gap: 15px; text-align: center; }
         }
     </style>
 </head>
@@ -642,205 +171,80 @@
     <!-- Шапка -->
     <header>
         <div class="container header-content">
-            <div class="header-story">
-                <span>Сделано с любовью</span>
-                <span class="pulse-heart">❤</span>
-            </div>
-            <div class="contact-info">
-                <a href="tel:89960320581">8 (996) 032-05-81</a>
-                <a href="mailto:a.a.zaostrovnykh@yandex.ru">a.a.zaostrovnykh@yandex.ru</a>
+            <a href="index.html" class="btn-back">
+                ← На главную
+            </a>
+            <div style="font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.15rem; font-weight: 600; color: var(--gold-dark);">
+                Сделано с любовью ❤
             </div>
         </div>
     </header>
 
-    <!-- Главный экран -->
-    <section class="hero">
-        <div class="container hero-content">
-            <div class="hero-text">
-                <span class="hero-tagline">Эксклюзивный подарок</span>
-                
-                <h1>Книга, в которой главный герой — Ваш ребенок</h1>
-                
-                <p>Погрузите малыша в захватывающий квест с любимыми героями. Поучительная история, красочные иллюстрации и ощущение настоящего чуда, созданное специально для него.</p>
-                
-                <!-- Кнопки -->
-                <div class="hero-buttons">
-                    <a href="#order" class="btn">Выбрать издание</a>
-                    <a href="portfolio.html" class="btn btn-outline">Смотреть портфолио</a>
-                </div>
-            </div>
-            <div class="hero-image">
-                <img src="cover.jpg" alt="Обложка персональной книги">
-            </div>
+    <!-- Контент -->
+    <div class="container">
+        <div class="page-title">
+            <h1>Наши работы</h1>
+            <p>Нажмите на картинку, чтобы рассмотреть её подробнее</p>
         </div>
-    </section>
 
-    <!-- Блок преимуществ -->
-    <section class="features">
-        <div class="container features-grid">
-            <div class="features-image">
-                <img src="spread.jpg" alt="Разворот книги с иллюстрациями">
+        <!-- Сетка галереи -->
+        <div class="gallery">
+            
+            <!-- Картинка 1 -->
+            <div class="gallery-item" onclick="openLightbox('1.jpg')">
+                <img src="1.jpg" alt="Пример работы 1">
             </div>
-            <div class="features-text">
-                <h2 class="section-title">История, которая оживает</h2>
-                <p style="color: var(--text-muted); font-size: 1.05rem;">Мы создаем уникальные истории, где ваш ребенок — не просто наблюдатель, а главный участник событий. Он вместе с верными друзьями пройдет все испытания.</p>
-                
-                <ul class="feature-list">
-                    <li>
-                        <span class="feature-icon">✦</span>
-                        <div>
-                            <strong>Уникальный сюжет</strong>
-                            Ребенок учится доброте, смелости и решению задач через захватывающие приключения.
-                        </div>
-                    </li>
-                    <li>
-                        <span class="feature-icon">✦</span>
-                        <div>
-                            <strong>Премиальные иллюстрации</strong>
-                            Плотная мелованная бумага и глубокие цвета, которые не тускнеют со временем.
-                        </div>
-                    </li>
-                    <li>
-                        <span class="feature-icon">✦</span>
-                        <div>
-                            <strong>Идеальный подарок</strong>
-                            Книга, которую захочется хранить на полке и перечитывать спустя годы.
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </section>
 
-    <!-- Блок "Поводы для подарка" -->
-    <section class="occasions">
-        <div class="container">
-            <div class="occasions-header">
-                <h2>Кому и когда дарить?</h2>
-                <p>Идеальный подарок, который запомнится на долгие годы</p>
+            <!-- Картинка 2 -->
+            <div class="gallery-item" onclick="openLightbox('2.jpg')">
+                <img src="2.jpg" alt="Пример работы 2">
+            </div>
+
+            <!-- 
+                ВНИМАНИЕ! 
+                Чтобы добавить третью картинку, просто скопируйте этот блок ниже, 
+                вставьте после картинки 2 и замените цифру 3 на нужную. 
+                Не забудьте загрузить сам файл 3.jpg в репозиторий.
+
+            <div class="gallery-item" onclick="openLightbox('3.jpg')">
+                <img src="3.jpg" alt="Пример работы 3">
             </div>
             
-            <div class="occasions-grid">
-                <div class="occasion-card">
-                    <div class="occasion-icon">🎂</div>
-                    <h3>День рождения</h3>
-                    <p>Главный праздник, который запомнится надолго. Выделит Вашего ребенка среди всех гостей.</p>
-                </div>
-                <div class="occasion-card">
-                    <div class="occasion-icon">🎄</div>
-                    <h3>Новый год</h3>
-                    <p>Волшебство, которое останется с малышом на весь год. Отличная альтернатива сладким подаркам.</p>
-                </div>
-                <div class="occasion-card">
-                    <div class="occasion-icon">👵</div>
-                    <h3>Бабушкам и дедушкам</h3>
-                    <p>Идеальный способ передать свою любовь внукам. Книга, которая останется в семейной библиотеке.</p>
-                </div>
-                <div class="occasion-card">
-                    <div class="occasion-icon">🎁</div>
-                    <h3>Крестным и друзьям</h3>
-                    <p>Оригинальный подарок, который не пылится на полке, а воспитывает и вдохновляет каждый день.</p>
-                </div>
-                <div class="occasion-card">
-                    <div class="occasion-icon">✨</div>
-                    <h3>Без повода</h3>
-                    <p>Просто чтобы напомнить, как сильно вы его любите. Лучший способ сказать это без слов.</p>
-                </div>
-                <div class="occasion-card">
-                    <div class="occasion-icon">🎒</div>
-                    <h3>В детский сад или школу</h3>
-                    <p>Поможет мягко адаптироваться к новому этапу в жизни и поверить в собственные силы.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Блок тарифов -->
-    <section class="pricing" id="order">
-        <div class="container">
-            <div class="pricing-header">
-                <h2>Варианты исполнения</h2>
-                <p>Выберите формат, который подойдет именно вам</p>
-            </div>
+            -->
             
-            <div class="pricing-cards">
-                
-                <!-- Журнал -->
-                <div class="card">
-                    <h3>Журнал</h3>
-                    <p class="format">Легкий бюджетный вариант</p>
-                    <div class="price">3 500 ₽</div>
-                    <ul>
-                        <li>Мягкий переплет</li>
-                        <li>Глянцевая обложка</li>
-                        <li>Яркие цветные иллюстрации</li>
-                        <li>Удобен для маленьких ручек</li>
-                    </ul>
-                    <a href="https://max.ru/u/f9LHodD0cOLakzBstNNYEfyHyuyCqD5HHT9MV4L_Wvv586AaxOfTeBccrfw" target="_blank" rel="noopener" class="btn">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
-                        Заказать
-                    </a>
-                </div>
-
-                <!-- А5 -->
-                <div class="card">
-                    <h3>Книга А5</h3>
-                    <p class="format">Компактный твердый переплет</p>
-                    <div class="price">4 500 ₽</div>
-                    <ul>
-                        <li>Твердый переплет</li>
-                        <li>Удобный формат А5</li>
-                        <li>Плотная мелованная бумага</li>
-                        <li>Долговечное издание</li>
-                    </ul>
-                    <a href="https://max.ru/u/f9LHodD0cOLakzBstNNYEfyHyuyCqD5HHT9MV4L_Wvv586AaxOfTeBccrfw" target="_blank" rel="noopener" class="btn">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
-                        Заказать
-                    </a>
-                </div>
-
-                <!-- А4 Премиум -->
-                <div class="card premium">
-                    <div class="card-badge">Лучший выбор</div>
-                    <h3>Книга А4</h3>
-                    <p class="format">Большой подарочный формат</p>
-                    <div class="price">6 000 ₽</div>
-                    <ul>
-                        <li>Твердый переплет</li>
-                        <li>Большой формат А4</li>
-                        <li>Крупные детализированные иллюстрации</li>
-                        <li>Плотная бумага премиум-класса</li>
-                        <li>Идеальный подарок на память</li>
-                    </ul>
-                    <a href="https://max.ru/u/f9LHodD0cOLakzBstNNYEfyHyuyCqD5HHT9MV4L_Wvv586AaxOfTeBccrfw" target="_blank" rel="noopener" class="btn">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
-                        Заказать
-                    </a>
-                </div>
-
-            </div>
         </div>
-    </section>
+    </div>
+
+    <!-- Окно для полноэкранного просмотра -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+        <img src="" id="lightbox-img" alt="Просмотр фото">
+    </div>
 
     <!-- Подвал -->
     <footer>
         <div class="container">
-            <div class="footer-story">
-                Сделано с любовью. Каждая книга создается с любовью и трепетом, чтобы подарить Вашему ребенку настоящее чудо.<span class="pulse-heart">❤</span>
-            </div>
-            
-            <p class="subtitle">Свяжитесь с нами для заказа</p>
-            
-            <div class="footer-contacts">
-                <a href="tel:89960320581" class="phone-link">8 (996) 032-05-81</a>
-                <a href="mailto:a.a.zaostrovnykh@yandex.ru" class="phone-link">a.a.zaostrovnykh@yandex.ru</a>
-                <a href="https://max.ru/u/f9LHodD0cOLakzBstNNYEfyHyuyCqD5HHT9MV4L_Wvv586AaxOfTeBccrfw" target="_blank" rel="noopener" class="btn" style="font-size: 0.85rem; padding: 12px 30px;">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
-                    Написать в MAX
-                </a>
-            </div>
+            <p>&copy; Персональные книги-сказки. Все права защищены.</p>
         </div>
     </footer>
+
+    <!-- Скрипт для работы увеличения картинок -->
+    <script>
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+
+        // Функция открытия картинки на весь экран
+        function openLightbox(imageSrc) {
+            lightboxImg.src = imageSrc; 
+            lightbox.classList.add('active'); 
+            document.body.style.overflow = 'hidden'; // Отключаем прокрутку фона
+        }
+
+        // Функция закрытия
+        function closeLightbox() {
+            lightbox.classList.remove('active'); 
+            document.body.style.overflow = 'auto'; // Возвращаем прокрутку
+        }
+    </script>
 
 </body>
 </html>
