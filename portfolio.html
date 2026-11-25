@@ -19,6 +19,7 @@
     <noscript><div><img src="https://mc.yandex.ru/watch/114287071" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
     <!-- /Yandex.Metrika counter -->
 
+    <!-- Красивые, элегантные шрифты -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
@@ -36,6 +37,7 @@
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
+        
         body {
             font-family: 'Montserrat', sans-serif;
             background-color: var(--bg-main);
@@ -56,6 +58,7 @@
             border-bottom: 1px solid var(--border-soft);
             margin-bottom: 60px;
         }
+        
         .header-content { display: flex; justify-content: space-between; align-items: center; }
         
         .btn-back {
@@ -68,6 +71,7 @@
             font-size: 0.95rem;
             transition: color 0.3s;
         }
+        
         .btn-back:hover { color: var(--gold-dark); }
 
         /* Заголовок */
@@ -75,7 +79,7 @@
         .page-title h1 { font-size: 3.5rem; color: var(--brown-dark); margin-bottom: 15px; }
         .page-title p { color: var(--text-muted); font-size: 1.1rem; }
 
-        /* Галерея */
+        /* Сетка галереи */
         .gallery {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -109,19 +113,19 @@
             transition: transform 0.5s ease;
         }
 
-        /* --- СТИЛИ ДЛЯ ПОЛНОЭКРАННОГО ПРОСМОТРА (Lightbox) --- */
+        /* Окно полноэкранного просмотра (Lightbox) */
         .lightbox {
-            display: none; /* Скрыто по умолчанию */
+            display: none; 
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(15, 15, 15, 0.9); /* Темный фон с прозрачностью */
+            background-color: rgba(15, 15, 15, 0.9); 
             z-index: 9999;
             justify-content: center;
             align-items: center;
-            cursor: zoom-out; /* Курсор для закрытия */
+            cursor: zoom-out; 
             opacity: 0;
             transition: opacity 0.3s ease;
         }
@@ -153,6 +157,13 @@
             border-top: 1px solid var(--border-soft);
         }
         footer p { color: var(--text-muted); font-size: 0.95rem; }
+
+        /* Адаптив для телефонов */
+        @media (max-width: 576px) {
+            .page-title h1 { font-size: 2.5rem; }
+            .gallery { grid-template-columns: 1fr; gap: 20px; }
+            .header-content { flex-direction: column; gap: 15px; text-align: center; }
+        }
     </style>
 </head>
 <body>
@@ -180,16 +191,23 @@
         <div class="gallery">
             
             <!-- Картинка 1 -->
-            <!-- Обратите внимание на onclick="openLightbox('1.jpg')" -->
             <div class="gallery-item" onclick="openLightbox('1.jpg')">
                 <img src="1.jpg" alt="Пример работы 1">
             </div>
-            
-            <!-- КАК ДОБАВИТЬ НОВЫЕ КАРТИНКИ:
-                 Скопируйте эти 3 строчки, вставьте ниже и поменяйте 1.jpg на 2.jpg и т.д.
-                 
+
+            <!-- Картинка 2 -->
             <div class="gallery-item" onclick="openLightbox('2.jpg')">
                 <img src="2.jpg" alt="Пример работы 2">
+            </div>
+
+            <!-- 
+                ВНИМАНИЕ! 
+                Чтобы добавить третью картинку, просто скопируйте этот блок ниже, 
+                вставьте после картинки 2 и замените цифру 3 на нужную. 
+                Не забудьте загрузить сам файл 3.jpg в репозиторий.
+
+            <div class="gallery-item" onclick="openLightbox('3.jpg')">
+                <img src="3.jpg" alt="Пример работы 3">
             </div>
             
             -->
@@ -214,17 +232,17 @@
         const lightbox = document.getElementById('lightbox');
         const lightboxImg = document.getElementById('lightbox-img');
 
-        // Функция открытия
+        // Функция открытия картинки на весь экран
         function openLightbox(imageSrc) {
-            lightboxImg.src = imageSrc; // Подставляем нужную картинку
-            lightbox.classList.add('active'); // Показываем окно
-            document.body.style.overflow = 'hidden'; // Отключаем прокрутку сайта сзади
+            lightboxImg.src = imageSrc; 
+            lightbox.classList.add('active'); 
+            document.body.style.overflow = 'hidden'; // Отключаем прокрутку фона
         }
 
         // Функция закрытия
         function closeLightbox() {
-            lightbox.classList.remove('active'); // Скрываем окно
-            document.body.style.overflow = 'auto'; // Включаем прокрутку обратно
+            lightbox.classList.remove('active'); 
+            document.body.style.overflow = 'auto'; // Возвращаем прокрутку
         }
     </script>
 
