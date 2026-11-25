@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Наши работы | Портфолио</title>
+
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+        (function(m,e,t,r,i,k,a){
+            m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+            m[i].l=1*new Date();
+            for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+            k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+        })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=114287071', 'ym');
+
+        ym(114287071, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/114287071" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- /Yandex.Metrika counter -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-main: #FCFAF6;        
+            --text-main: #2D2A26;      
+            --text-muted: #7A7265;     
+            --gold-main: #D4AF37;      
+            --gold-light: #F3D586;     
+            --gold-dark: #B88A1E;      
+            --border-soft: #EBE3D5;
+            --brown-dark: #4A2F1D; 
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            line-height: 1.8;
+            background-image: radial-gradient(circle at 50% 0%, #FFFDF8 0%, var(--bg-main) 100%);
+            min-height: 100vh;
+        }
+
+        h1, h2, h3 { font-family: 'Playfair Display', serif; line-height: 1.2; }
+        .container { max-width: 1140px; margin: 0 auto; padding: 0 30px; }
+
+        /* Шапка */
+        header {
+            padding: 25px 0;
+            background-color: rgba(252, 250, 246, 0.9);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-soft);
+            margin-bottom: 60px;
+        }
+        .header-content { display: flex; justify-content: space-between; align-items: center; }
+        
+        .btn-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-main);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+        .btn-back:hover { color: var(--gold-dark); }
+
+        /* Заголовок */
+        .page-title { text-align: center; margin-bottom: 50px; }
+        .page-title h1 { font-size: 3.5rem; color: var(--brown-dark); margin-bottom: 15px; }
+        .page-title p { color: var(--text-muted); font-size: 1.1rem; }
+
+        /* Галерея */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 80px;
+        }
+
+        .gallery-item {
+            background: #FFFFFF;
+            border: 4px solid #FFFFFF;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px -10px rgba(45, 42, 38, 0.15);
+            overflow: hidden;
+            position: relative;
+            transition: all 0.4s ease;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 20px 40px -10px rgba(212, 175, 55, 0.3);
+            border-color: var(--gold-main);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            aspect-ratio: 4 / 3; /* Чтобы картинки были аккуратными плитками */
+            transition: transform 0.5s ease;
+        }
+
+        /* Подвал */
+        footer {
+            background-color: var(--bg-main);
+            padding: 40px 0;
+            text-align: center;
+            border-top: 1px solid var(--border-soft);
+        }
+        footer p { color: var(--text-muted); font-size: 0.95rem; }
+    </style>
+</head>
+<body>
+
+    <!-- Шапка -->
+    <header>
+        <div class="container header-content">
+            <a href="index.html" class="btn-back">
+                ← На главную
+            </a>
+            <div style="font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.15rem; font-weight: 600; color: var(--gold-dark);">
+                Сделано с любовью ❤
+            </div>
+        </div>
+    </header>
+
+    <!-- Контент -->
+    <div class="container">
+        <div class="page-title">
+            <h1>Наши работы</h1>
+            <p>Примеры страниц из наших персональных книг</p>
+        </div>
+
+        <!-- Сетка галереи -->
+        <div class="gallery">
+            <!-- Картинка 1 -->
+            <div class="gallery-item">
+                <img src="1.jpg" alt="Пример работы 1">
+            </div>
+            
+            <!-- Картинка 2 (Закомментирована, так как у вас пока нет 2.jpg) 
+            <div class="gallery-item">
+                <img src="2.jpg" alt="Пример работы 2">
+            </div>
+            -->
+            
+            <!-- Чтобы добавить новые картинки, просто удалите эти скобки вокруг блока <div class="gallery-item">...</div> и загрузите файл 2.jpg, 3.jpg и т.д. в репозиторий -->
+        </div>
+    </div>
+
+    <!-- Подвал -->
+    <footer>
+        <div class="container">
+            <p>&copy; Персональные книги-сказки. Все права защищены.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
